@@ -1,35 +1,24 @@
-<?php
-
-header('Content-Type: application/json');
-// include_once 'db.php';
-
-// Connexion à la BDD
-$host = "localhost:3306";
-$dbname = "api";
-$login = "root";
-$mdp = "";
-
-        try
-        {
-            $db = new PDO('mysql:host='.$host.';dbname='.$dbname.';charset=UTF8',$login,$mdp);
-            $return["success"] = true;
-            $return["message"] = "Connexion à la base de données établie.";
-        }
-        catch(Exception $e)
-        {
-            $return["success"] = false;
-            $return["message"] = "Connexion à la base de données impossible.";
-        }
-
-        // echo json_encode($retour);
-
-$request = $db->prepare("SELECT * FROM user");
-$request->execute();
-
-$return["success"] = true;
-$return["message"] = "Liste des utilisateurs";
-$return["results"]["user"] = $request->fetchAll();
-
-echo json_encode($return); 
-
-?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Simplon API</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <img src="img/index.ico" alt="Logo Simplon" id="logo">
+        <h1>Se connecter</h1>
+        <div id="authentification">
+            <form method="POST">
+                <label class="label labelusrname" for="username">Nom d'utilisateur ou adresse mail</label>
+                <input name="username"></br>
+                <label class="label labelpasswd" for="password">Mot de passe</label> - <a href="index.php">Mot de passe oublié</a>
+                <input name="password" type="password"></br>
+                <input class="btn" type="submit" value="Connexion">
+            </form>
+        </div>
+        <div id="createaccount">
+            <p>Pas de compte ? <a href="index.php">créez-en un !</a></p>
+        </div>
+    </body>
+</html>
