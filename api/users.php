@@ -7,14 +7,7 @@ $table = [
 
 echo json_code($table, JSON_PRETTY_PRINT);
 
-// créer un list_users.html
 
 ?>
 
-<script>
-    fetch('mettre l'url généré par postman')
-        .then(response => response.json)
-        .then(response => console.log(response))
-        .catch(error => alert("Erreur : " + error))
-</script>
 
