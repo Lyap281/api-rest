@@ -9,16 +9,22 @@
         <img src="img/index.ico" alt="Logo Simplon" id="logo">
         <h1>Se connecter</h1>
         <div id="authentification">
-            <form method="POST">
-                <label class="label labelusrname" for="username">Nom d'utilisateur ou adresse mail</label>
-                <input name="username"></br>
-                <label class="label labelpasswd" for="password">Mot de passe</label> - <a href="index.php">Mot de passe oublié</a>
-                <input name="password" type="password"></br>
-                <input class="btn" type="submit" value="Connexion">
-            </form>
+
+            <?php
+
+            if(isset($_GET["add"]))
+            {
+                include_once "./forms/form_new.html";
+            }
+            else
+            {
+                include_once "./forms/form_auth.html";
+            }
+            
+            ?>
         </div>
         <div id="createaccount">
-            <p>Pas de compte ? <a href="index.php">créez-en un !</a></p>
+            <p>Pas de compte ? <a href="index.php?add">créez-en un !</a></p>
         </div>
     </body>
 </html>

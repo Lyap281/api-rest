@@ -4,11 +4,8 @@ $results = ["message"=>"", "error" => "" , "success" => true];
 $email = $_POST['email'];
 $password = sha1($_POST['password']);
 
-$host = "localhost:3306";
-$dbname = "api";
-$login = "root";
-$mdp = "";
-$db = new PDO('mysql:host='.$host.';dbname='.$dbname.';charset=UTF8',$login,$mdp);
+// Connexion à la BDD
+include_once 'db.php';
 
 $db->setAttribute(PDO::ERRMODE_EXCEPTION, PDO::ERRMODE_WARNING);
 
