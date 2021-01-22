@@ -1,3 +1,6 @@
+<?php
+ //Trouver comment envoyer une requête POST avec le formulaire
+?>
 <h1>Se connecter</h1>
 <div id="authentification">
     <form name="auth" action="index.php" method="POST">
