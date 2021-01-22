@@ -10,11 +10,11 @@
         <?php
         if(isset($_GET["add"]))
         {
-            include_once "./forms/form_new.html";
+            include_once "./forms/form_new.php";
         }
         else
         {
-            include_once "./forms/form_auth.html";
+            include_once "./forms/form_auth.php";
         } 
         ?>
     </body>
